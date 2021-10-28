@@ -12,38 +12,39 @@ import (
 )
 
 func main() {
-	fmt.Println(itoa.Itoa(-125))
+	fmt.Println("itoa:", itoa.Itoa(-125))
 
 
 	s := "-0125"
 	x, err := atoi.Atoi(s)
 	if err != nil {
-		log.Println(err)
+		log.Println("atoi:", err)
 	} else {
-		fmt.Println(x)
+		fmt.Println("atoi:", x)
 	}
 
 
 	s = "!длров уоллеХ"
-	fmt.Println(reverse.Reverse(s))
+	fmt.Println("reverse:", reverse.Reverse(s))
 
 
 	err = sortimports.SortImports("itoa/sort3.go")
 	if err != nil {
-		log.Println(err)
+		log.Println("sort:", err)
 	} else {
-		fmt.Println("success")
+		fmt.Println("sort: success")
 	}
 
 	err = sortimports.SortInDir("fibo")
 	if err != nil {
 		log.Println(err)
 	} else {
-		fmt.Println("success")
+		fmt.Println("sort: success")
 	}
 
 
 	generator := fibo.Fibonacci()
+	fmt.Print("fibonacci: ")
 	for i := 0; i < 10; i++ {
 		fmt.Print(generator(), " ")
 	}
@@ -55,8 +56,8 @@ func main() {
 	var r rune
 	r, err = runeindex.RuneByIndex(&s, &i)
 	if err != nil {
-		log.Println(err)
+		log.Println("runeByIndex:", err)
 	} else {
-		fmt.Println(string(r))
+		fmt.Println("runeByIndex:", string(r))
 	}
 }
